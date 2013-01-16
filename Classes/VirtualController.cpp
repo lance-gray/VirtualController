@@ -75,11 +75,22 @@ void VirtualController::drawLayer() {
 #pragma mark Update Methods
 void VirtualController::updateVirtualController() {
     this -> updateStick();
+    this -> updateButtons();
 }
 
 void VirtualController::updateStick() {
     if ( m_StickDirection != StickDirectionNone ) {
         this -> vcStickMoved( m_PadStick -> getPosition() );
+    } else {
+        
+    }
+}
+
+void VirtualController::updateButtons() {
+    for ( int i = 0; i < m_ButtonFlags.size(); i++ ) {
+        if ( m_ButtonFlags.at( i ) ) {
+            this -> vcButtonHeld( i );
+        }
     }
 }
 
@@ -200,6 +211,7 @@ void VirtualController::vcStickReset() {
 void VirtualController::vcButtonPressed( int p_ID ) {
     CCSprite * button = ( CCSprite * ) m_PadButtons -> objectAtIndex( p_ID );
     button -> setScale( button -> getScale() + 0.20f );
+    m_ButtonFlags.at( p_ID ) = true;
     
     if ( m_ControlledObject )
         m_ControlledObject -> onButtonPress( p_ID );
@@ -210,12 +222,13 @@ void VirtualController::vcButtonMoved( int p_ID ) {
 }
 
 void VirtualController::vcButtonHeld( int p_ID ) {
-    
+    if ( m_ControlledObject ) m_ControlledObject -> onButtonHeld( p_ID );
 }
 
 void VirtualController::vcButtonUnpressed( int p_ID ) {
     CCSprite * button = ( CCSprite * ) m_PadButtons -> objectAtIndex( p_ID );
     button -> setScale( button -> getScale() - 0.20f );
+    m_ButtonFlags.at( p_ID ) = false;
     
     if ( m_ControlledObject )
         m_ControlledObject -> onButtonUnpress( p_ID );
@@ -245,11 +258,13 @@ void VirtualController::moveStickSprite( float p_PosX, float p_PosY ) {
 #pragma mark Creation Methods
 void VirtualController::addButton( cocos2d::CCSprite * p_Button ) {
     m_PadButtons -> addObject( p_Button );
+    m_ButtonFlags.push_back( false );
     this -> addChild( p_Button );
 }
 
 void VirtualController::removeButton( unsigned int p_ButtonID ) {
     this -> removeChild( ( CCSprite * ) m_PadButtons -> objectAtIndex( p_ButtonID ), true );
+    m_ButtonFlags.erase( m_ButtonFlags.begin() + p_ButtonID );
     m_PadButtons -> removeObjectAtIndex( p_ButtonID );
 }
 

@@ -1,8 +1,8 @@
 //
 //  MainGameScene.cpp
-//  SHMUP
+//  VirtualController
 //
-//  Created by Alexis Tio on 1/14/13.
+//  Created by Lance Gray on 1/14/13.
 //
 //
 

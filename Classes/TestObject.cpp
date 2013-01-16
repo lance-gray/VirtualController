@@ -1,8 +1,8 @@
 //
 //  TestObject.cpp
-//  SHMUP
+//  VirtualController
 //
-//  Created by Alexis Tio on 1/15/13.
+//  Created by Lance Gray on 1/15/13.
 //
 //
 
@@ -67,8 +67,15 @@ void TestObject::onButtonPress( int p_ID ) {
     
 }
 
+void TestObject::onButtonHeld( int p_ID ) {
+    if ( p_ID == 0 ) {
+        m_Sprite -> setScale( m_Sprite -> getScale() + 0.05f );
+    }
+}
+
 void TestObject::onButtonUnpress( int p_ID ) {
-    
+    if ( p_ID == 0 )
+        m_Sprite -> setScale( 1.0f );
 }
 
 void TestObject::doFadeEnd(cocos2d::CCObject *p_Sender) {

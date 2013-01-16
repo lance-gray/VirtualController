@@ -65,7 +65,7 @@
 		781C33B11547F06B00633F88 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		781C33B31547F06B00633F88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		781C33B51547F06B00633F88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		8467131016A668B400AB658C /* CommonFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
+		8467131016A668B400AB658C /* VirtualControllerCommons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualControllerCommons.h; sourceTree = "<group>"; };
 		84CE828D16A417A90085A5F0 /* MainGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainGameScene.cpp; sourceTree = "<group>"; };
 		84CE828E16A417A90085A5F0 /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
 		84E695E416A503760024E864 /* VirtualController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualController.cpp; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		8467130F16A667EE00AB658C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				8467131016A668B400AB658C /* CommonFunctions.h */,
+				8467131016A668B400AB658C /* VirtualControllerCommons.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";

@@ -1,13 +1,13 @@
 //
-//  CommonFunctions.h
+//  VirtualControllerCommons.h
 //  VirtualController
 //
-//  Created by Alexis Tio on 1/16/13.
+//  Created by Lance Gray on 1/16/13.
 //
 //
 
-#ifndef VirtualController_CommonFunctions_h
-#define VirtualController_CommonFunctions_h
+#ifndef VirtualController_VirtualControllerCommons_h
+#define VirtualController_VirtualControllerCommons_h
 
 #define DEFAULT_POSITION CCPointZero
 #define DEFAULT_COLOR() ccc4( 0, 0, 0, 0 )

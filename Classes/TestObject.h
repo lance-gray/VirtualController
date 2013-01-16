@@ -1,8 +1,8 @@
 //
 //  TestObject.h
-//  SHMUP
+//  VirtualController
 //
-//  Created by Alexis Tio on 1/15/13.
+//  Created by Lance Gray on 1/15/13.
 //
 //
 
@@ -11,7 +11,7 @@
 
 #include "cocos2d.h"
 #include "ControlledObject.h"
-#include "CommonFunctions.h"
+#include "VirtualControllerCommons.h"
 
 class TestObject : public cocos2d::CCNode, ControlledObject {
 private:
@@ -24,6 +24,7 @@ public:
     virtual void onStickMoved( float p_Distance, float p_Angle, StickDirection p_Direction );
     virtual void onStickReset();
     virtual void onButtonPress( int p_ID );
+    virtual void onButtonHeld( int p_ID );
     virtual void onButtonUnpress( int p_ID );
     
     void doFadeEnd( cocos2d::CCObject * p_Sender );

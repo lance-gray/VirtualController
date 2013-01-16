@@ -2,7 +2,7 @@
 //  VirtualController.h
 //  VirtualController
 //
-//  Created by Alexis Tio on 1/15/13.
+//  Created by Lance Gray on 1/15/13.
 //
 //
 
@@ -11,12 +11,13 @@
 
 #include "cocos2d.h"
 #include "ControlledObject.h"
-#include "CommonFunctions.h"
+#include "VirtualControllerCommons.h"
 
 class VirtualController : public cocos2d::CCLayerColor {
 private:
     float m_StickRadius;
     StickDirection m_StickDirection;
+    std::vector< bool > m_ButtonFlags;
     
     ControlledObject * m_ControlledObject;    
     cocos2d::CCDictionary m_TouchedObjects;
@@ -44,6 +45,7 @@ public:
     // Update Methods
     void updateVirtualController();
     void updateStick();
+    void updateButtons();
     
     // Getter Methods
     StickDirection getDirection();

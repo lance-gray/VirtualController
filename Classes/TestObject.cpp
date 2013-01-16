@@ -58,18 +58,10 @@ void TestObject::onButtonPress( int p_ID ) {
         
         label -> runAction( sequenceAction );
     } else if ( p_ID == 1 ) {
-        CCLabelTTF * label = CCLabelTTF::create( "B!", "Arial", TITLE_FONT_SIZE );
-        label -> setPosition( m_Sprite -> getPosition() );
-        label -> setTag( 10 );
-        this -> addChild( label );
+        m_Sprite -> stopAllActions();
         
-        CCMoveBy * moveAction = CCMoveBy::create( 0.2f, CCPointMake( 0, 64 ) );
-        CCFadeOut * fadeAction = CCFadeOut::create( moveAction -> getDuration() );
-        CCSpawn * spawnAction = CCSpawn::createWithTwoActions( moveAction, fadeAction );
-        CCCallFunc * callFunc = CCCallFunc::create( this, callfunc_selector( TestObject::doFadeEnd ) );
-        CCSequence * sequenceAction = CCSequence::createWithTwoActions( spawnAction, callFunc );
-        
-        label -> runAction( sequenceAction );
+        CCMoveTo * moveAction = CCMoveTo::create( 0.5f, CCPointZero );
+        m_Sprite -> runAction( moveAction );
     }
     
     

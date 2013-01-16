@@ -14,6 +14,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		847B9D1516A67F5C0079A832 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847B9D1316A67F5C0079A832 /* MainMenuScene.cpp */; };
 		84CE828F16A417A90085A5F0 /* MainGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CE828D16A417A90085A5F0 /* MainGameScene.cpp */; };
 		84E695E616A503760024E864 /* VirtualController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E695E416A503760024E864 /* VirtualController.cpp */; };
 		84E6960316A51E040024E864 /* TestObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E6960116A51E040024E864 /* TestObject.cpp */; };
@@ -66,6 +67,8 @@
 		781C33B31547F06B00633F88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		781C33B51547F06B00633F88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8467131016A668B400AB658C /* VirtualControllerCommons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualControllerCommons.h; sourceTree = "<group>"; };
+		847B9D1316A67F5C0079A832 /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
+		847B9D1416A67F5C0079A832 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		84CE828D16A417A90085A5F0 /* MainGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainGameScene.cpp; sourceTree = "<group>"; };
 		84CE828E16A417A90085A5F0 /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
 		84E695E416A503760024E864 /* VirtualController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualController.cpp; sourceTree = "<group>"; };
@@ -186,6 +189,41 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		847B9D1216A67F2F0079A832 /* ControlledObject Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				84E6960116A51E040024E864 /* TestObject.cpp */,
+				84E6960216A51E040024E864 /* TestObject.h */,
+			);
+			name = "ControlledObject Subclass";
+			sourceTree = "<group>";
+		};
+		847B9D1616A682600079A832 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF23D4E3143315EB00657E08 /* AppDelegate.cpp */,
+				BF23D4E4143315EB00657E08 /* AppDelegate.h */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		847B9D1716A682680079A832 /* Hello World */ = {
+			isa = PBXGroup;
+			children = (
+				BF23D4E5143315EB00657E08 /* HelloWorldScene.cpp */,
+				BF23D4E6143315EB00657E08 /* HelloWorldScene.h */,
+			);
+			name = "Hello World";
+			sourceTree = "<group>";
+		};
+		847B9D1816A682730079A832 /* Helper Macros */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CF3661626CB6000AFC938 /* AppMacros.h */,
+			);
+			name = "Helper Macros";
+			sourceTree = "<group>";
+		};
 		84CE828B16A417960085A5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +245,8 @@
 		84CE829016A417AE0085A5F0 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				847B9D1316A67F5C0079A832 /* MainMenuScene.cpp */,
+				847B9D1416A67F5C0079A832 /* MainMenuScene.h */,
 			);
 			name = "Main Menu";
 			sourceTree = "<group>";
@@ -214,6 +254,7 @@
 		84CE829116A417D80085A5F0 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				847B9D1216A67F2F0079A832 /* ControlledObject Subclass */,
 				84CE829216A417DC0085A5F0 /* Virtual Controller */,
 			);
 			name = Objects;
@@ -225,7 +266,6 @@
 				8467130F16A667EE00AB658C /* Common */,
 				84E695FD16A51A860024E864 /* ControlledObject */,
 				84E695E016A5030B0024E864 /* VirtualController */,
-				84E6960416A51E070024E864 /* Test Object */,
 			);
 			name = "Virtual Controller";
 			sourceTree = "<group>";
@@ -247,25 +287,14 @@
 			name = ControlledObject;
 			sourceTree = "<group>";
 		};
-		84E6960416A51E070024E864 /* Test Object */ = {
-			isa = PBXGroup;
-			children = (
-				84E6960116A51E040024E864 /* TestObject.cpp */,
-				84E6960216A51E040024E864 /* TestObject.h */,
-			);
-			name = "Test Object";
-			sourceTree = "<group>";
-		};
 		BF23D4E2143315EB00657E08 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				847B9D1616A682600079A832 /* App Delegate */,
+				847B9D1716A682680079A832 /* Hello World */,
+				847B9D1816A682730079A832 /* Helper Macros */,
 				84CE829116A417D80085A5F0 /* Objects */,
 				84CE828B16A417960085A5F0 /* Scenes */,
-				1A1CF3661626CB6000AFC938 /* AppMacros.h */,
-				BF23D4E3143315EB00657E08 /* AppDelegate.cpp */,
-				BF23D4E4143315EB00657E08 /* AppDelegate.h */,
-				BF23D4E5143315EB00657E08 /* HelloWorldScene.cpp */,
-				BF23D4E6143315EB00657E08 /* HelloWorldScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -380,6 +409,7 @@
 				84CE828F16A417A90085A5F0 /* MainGameScene.cpp in Sources */,
 				84E695E616A503760024E864 /* VirtualController.cpp in Sources */,
 				84E6960316A51E040024E864 /* TestObject.cpp in Sources */,
+				847B9D1516A67F5C0079A832 /* MainMenuScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
